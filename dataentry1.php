@@ -74,15 +74,15 @@
          <h3> Output</h3>
          <table>
             <tr>
-               <td><label style="color:blue;">Title:</label></td>
+               <td><label>Title:</label></td>
                <td><?php echo "$title";?></td>
             </tr>
             <tr>
-               <td><label style="color:blue;">First Name:</label></td>
+               <td><label>First Name:</label></td>
                <td><?php echo "$first_name";?></td>
             </tr>
             <tr>
-               <td><label style="color:blue;">Surname:</label></td>
+               <td><label>Surname:</label></td>
                <td><?php echo "$surname";?></td>
             </tr>
             <tr>
