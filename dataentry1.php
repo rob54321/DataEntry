@@ -101,6 +101,7 @@
                $colour = "#20C040";
             }
 
+            // display the status message in the correct colour
             echo '<table style="background-color:white;">
             <tr>
                <th style="color:black;">Status message</th>
