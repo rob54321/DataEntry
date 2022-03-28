@@ -76,15 +76,15 @@
          <table>
             <tr>
                <td><label>Title:</label></td>
-               <td><?php echo "$title";?></td>
+               <td>',$title, '</td>
             </tr>
             <tr>
                <td><label>First Name:</label></td>
-               <td><?php echo "$first_name";?></td>
+               <td>', $first_name, '</td>
             </tr>
             <tr>
                <td><label>Surname:</label></td>
-               <td><?php echo "$surname";?></td>
+               <td>', $surname, '</td>
             </tr>
             <tr>
             </tr>
