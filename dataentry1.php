@@ -69,7 +69,8 @@
       <hr>
 
       <!-- Results output -->
-      <div>
+   <?php
+      echo '<div>
          <h1 style="text-align: center;">Result</h1>
          <h3> Output</h3>
          <table>
@@ -87,10 +88,10 @@
             </tr>
             <tr>
             </tr>
-         </table>
+         </table>';
 
-         <!-- output message -->
-         <?php //check if it is an error message or not
+            // determine colour of status message
+            // depending on wether it is an error or not
             $pos = strpos($result_status, "Error:");
             if ($pos === 0) {
                // there was an error
@@ -99,16 +100,17 @@
                // there is no error
                $colour = "#20C040";
             }
-         ?>
-            <table style="background-color:white">
+
+            echo '<table style="background-color:white;">
             <tr>
                <th style="color:black;">Status message</th>
             </tr>
             <tr>
-               <td style="color:<?php echo $colour; ?>;"><b><?php echo "$result_status"; ?></b></td>
+               <td style="color:',$colour,';"><b>', $result_status, '</b></td>
             </tr>
          </table>
-      </div>
+      </div>';
+   ?>
    </body>
 
 </html>
