@@ -22,13 +22,13 @@
                   </td>
                   <td>
                      <select id="title" name="title">
-                        <option value="Mr">Mr</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Dr">Dr</option>
-                        <option value="Prof">Prof</option>
-                        <option value="Rev">Rev</option>
-                        <option value="Miss">Miss</option>
-                        <option value="Master">Master</option>
+                        <option value="Mr" <?php retain_select("Mr"); ?> >Mr</option>
+                        <option value="Mrs" <?php retain_select("Mrs"); ?> >Mrs</option>
+                        <option value="Dr" <?php retain_select("Dr"); ?> >Dr</option>
+                        <option value="Prof" <?php retain_select("Prof"); ?> >Prof</option>
+                        <option value="Rev" <?php retain_select("Rev"); ?> >Rev</option>
+                        <option value="Miss" <?php retain_select("Miss"); ?> >Miss</option>
+                        <option value="Master" <?php retain_select("Master"); ?> >Master</option>
                      </select>
                   </td>
                </tr>
@@ -41,7 +41,7 @@
                      <input type="text"
                            id="first_name"
                            name="first_name"
-                           value="<?php echo retain_value("first_name") ?>" >
+                           value="<?php retain_value("first_name"); ?>" >
                   </td>
                </tr>
                <tr>
@@ -52,7 +52,7 @@
                      <input type="text" 
                             id="surname"
                             name="surname"
-                            value="<?php echo retain_value("surname") ?>" >
+                            value="<?php retain_value("surname"); ?>" >
                   </td>
                </tr>
                <tr>

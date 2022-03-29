@@ -2,15 +2,16 @@
 	include 'db_connect.php';
 	
 	// define variables and set to empty values
-	$title = "Mr";
 	$first_name = $surname = "";
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$title = test_input($_POST["title"]);
+		echo "title: " . $title;
 		$first_name = test_input($_POST["first_name"]);
 		$surname = test_input($_POST["surname"]);
 	}
 
 
+	// function to trim inputs
 	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -18,9 +19,18 @@
 		return $data;
 	}
 
+	
 	// function to retain value for input fields after submit or refresh
 	function retain_value($vname) {
-		return isset($_POST[$vname]) ? htmlspecialchars($_POST[$vname]) : ''; 	
+		echo isset($_POST[$vname]) ? htmlspecialchars($_POST[$vname]) : ''; 	
+	}
+
+	function retain_select($defvalue) {
+		if (isset($_POST['title']) && $_POST['title'] == $defvalue) {
+			echo 'selected';
+		} else {
+			echo "";
+		}
 	}
 	
 	// login to the database
@@ -37,7 +47,7 @@
 		// clear all fields
 		$_POST['first_name'] = '';
 		$_POST['surname'] = '';
-		$_POST['title'] = 'Mrs';
+		$_POST['title'] = '';
 	}
 
 	// Close connection to database
