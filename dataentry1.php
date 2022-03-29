@@ -38,7 +38,10 @@
                      <label for="first_name">First Name:</label>
                   </td>
                   <td>
-                     <input type="text" id="first_name" name="first_name">
+                     <input type="text"
+                           id="first_name"
+                           name="first_name"
+                           value="<?php echo retain_value("first_name") ?>" >
                   </td>
                </tr>
                <tr>
@@ -46,7 +49,10 @@
                      <label for="surname">Surname:</label>
                   </td>
                   <td>
-                     <input type="text" id="surname" name="surname">
+                     <input type="text" 
+                            id="surname"
+                            name="surname"
+                            value="<?php echo retain_value("surname") ?>" >
                   </td>
                </tr>
                <tr>
@@ -59,7 +65,7 @@
                      <input type="submit" value="Delete" name="delete">
                   </td>
                   <td style="text-align: right;" >
-                     <input type="reset" value="Clear">
+                     <input type="submit" value="Clear" name="clear">
                   </td>
                </tr>
             </table>
