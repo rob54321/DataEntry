@@ -1,16 +1,6 @@
 <?php
 	include 'db_connect.php';
 	
-	// define variables and set to empty values
-	$first_name = $surname = "";
-	if ($_SERVER["REQUEST_METHOD"] === "POST") {
-		$title = test_input($_POST["title"]);
-		echo "title: " . $title;
-		$first_name = test_input($_POST["first_name"]);
-		$surname = test_input($_POST["surname"]);
-	}
-
-
 	// function to trim inputs
 	function test_input($data) {
 		$data = trim($data);
@@ -25,6 +15,10 @@
 		echo isset($_POST[$vname]) ? htmlspecialchars($_POST[$vname]) : ''; 	
 	}
 
+	// function to retain value for a select tag
+	// the word selected must be echo 'ed to the option tag
+	// like <option value="Dr" selected >Dr</option>
+	// this option will remain on the form
 	function retain_select($defvalue) {
 		if (isset($_POST['title']) && $_POST['title'] == $defvalue) {
 			echo 'selected';
@@ -33,6 +27,15 @@
 		}
 	}
 	
+	// define variables and set to empty values
+	$first_name = $surname = "";
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		$title = test_input($_POST["title"]);
+		$first_name = test_input($_POST["first_name"]);
+		$surname = test_input($_POST["surname"]);
+	}
+
+
 	// login to the database
 	$conn = OpenCon("localhost", "robert", "coahtr", "TestIndex");
 
