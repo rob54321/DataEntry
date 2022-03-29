@@ -14,7 +14,7 @@
    <body>
       <div>
          <h1 style="text-align: center;">Test form</h1>
-         <form action="dataentry1.php" method="post" target="_self">
+         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
             <table>
                <tr>
                   <td>
