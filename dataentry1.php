@@ -96,24 +96,13 @@
             </tr>
          </table>';
 
-            // determine colour of status message
-            // depending on wether it is an error or not
-            $pos = strpos($result_status, "Error:");
-            if ($pos === 0) {
-               // there was an error
-               $colour = "#ff0000";
-            } else {
-               // there is no error
-               $colour = "#20C040";
-            }
-
             // display the status message in the correct colour
             echo '<table style="background-color:white;">
             <tr>
                <th style="color:black;">Status message</th>
             </tr>
             <tr>
-               <td style="color:',$colour,';"><b>', $result_status, '</b></td>
+               <td style="color:',set_status_colour($result_status),';"><b>', $result_status, '</b></td>
             </tr>
          </table>
       </div>';

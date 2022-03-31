@@ -56,4 +56,20 @@
 	// Close connection to database
 	$conn->close();
 
+	// function to set the status colour for sql query
+	// green for no sql errors
+	// red for sql errors
+	function set_status_colour($result_status) {
+		// determine colour of status message
+		// depending on wether it is an error or not
+		$pos = strpos($result_status, "Error:");
+		if ($pos === 0) {
+		   // there was an error
+		   $colour = "#ff0000";
+		} else {
+		   // there is no error
+		   $colour = "#20C040";
+		}
+		echo $colour;
+	}
 ?>
