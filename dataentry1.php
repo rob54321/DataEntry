@@ -78,7 +78,6 @@
    <?php
       echo '<div>
          <h1 style="text-align: center;">Result</h1>
-         <h3> Output</h3>
          <table>
             <tr>
                <td><label>Title:</label></td>
@@ -94,17 +93,19 @@
             </tr>
             <tr>
             </tr>
-         </table>';
+         </table></div><hr>';
 
             // display the status message in the correct colour
-            echo '<table style="background-color:white;">
+            
+            echo '<div><h1 style="text-align: center; color:',set_status_colour($result_status), ';">Status</h1>
+               <table style="background-color:white;">
             <tr>
                <th style="color:black;">Status message</th>
             </tr>
             <tr>
                <td style="color:',set_status_colour($result_status),';"><b>', $result_status, '</b></td>
             </tr>
-         </table>
+         </table><hr>
       </div>';
    ?>
    </body>
