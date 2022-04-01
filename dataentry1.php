@@ -98,7 +98,7 @@
             // display the status message in the correct colour
             
             echo '<div><h1 style="text-align: center; color:',set_status_colour($result_status), ';">Status</h1>
-               <table style="background-color:white;">
+               <table class="center" style="background-color:white;">
             <tr>
                <td style="color:',set_status_colour($result_status),';"><b>', $result_status, '</b></td>
             </tr>
