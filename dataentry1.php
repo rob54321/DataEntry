@@ -6,14 +6,14 @@
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <title>Data Form</title>
+      <title>Data Entry</title>
       <meta name="generator" content="Bluefish 2.2.12" />
       <link rel="stylesheet" href="css/style.css">
    </head>
 
    <body>
       <div>
-         <h1 style="text-align: center;">Test form</h1>
+         <h1 style="text-align: center;">Data Entry form</h1>
          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
             <table>
                <tr>
@@ -99,9 +99,6 @@
             
             echo '<div><h1 style="text-align: center; color:',set_status_colour($result_status), ';">Status</h1>
                <table style="background-color:white;">
-            <tr>
-               <th style="color:black;">Status message</th>
-            </tr>
             <tr>
                <td style="color:',set_status_colour($result_status),';"><b>', $result_status, '</b></td>
             </tr>
