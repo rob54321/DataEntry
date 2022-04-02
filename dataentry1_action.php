@@ -51,8 +51,8 @@
 		$_POST['surname'] = '';
 		$_POST['title'] = '';
     } else if (isset($_POST['search'])) {
-		// find a record
-		// being developed
+		// call the searchrec function
+		SearchRec($conn, "main", $title, $first_name, $surname);
     }		
 
 	// Close connection to database
