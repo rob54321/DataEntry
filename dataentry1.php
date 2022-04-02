@@ -61,10 +61,13 @@
                   <td style="text-align: left;" >
                      <input type="submit" value="Insert" name="insert">
                   </td>
-                  <td style="text-align: center;">
+                  <td>
+                     <input type="submit" value="Search" name="search">
+                  </td>
+                  <td>
                      <input type="submit" value="Delete" name="delete">
                   </td>
-                  <td style="text-align: right;" >
+                  <td>
                      <input type="submit" value="Clear" name="clear">
                   </td>
                </tr>

@@ -47,4 +47,25 @@
         }
         return $result_status . "<br>" . $rows_affected . "<br>";
      }
+
+     // function to search for a record
+     // this function sets all fields and will find
+     // only one record since there is a unique primary key
+     function SearchRec($conn, $table, $title, $first_name, $surname)
+     {
+        $searchrec = "SELECT * from $table WHERE (first_name = \"$first_name\")
+                                           AND (title = \"$title\")
+                                           AND (surname = \"$surname\")";
+        // do the query
+        $sresult = $conn->query($searchrec);
+        
+        // check for errors
+        if ($conn->error) {
+                echo "error: $conn->error\n";
+        }
+        echo "rows: $conn->affected_rows\n";
+        echo "info: $conn->info\n";
+        echo "host info: $conn->host_info\n";
+
+     }
 ?>

@@ -51,7 +51,9 @@
 		$_POST['first_name'] = '';
 		$_POST['surname'] = '';
 		$_POST['title'] = '';
-	}
+	} else if (isset($_POST['search'])) {
+		// find a record
+		
 
 	// Close connection to database
 	$conn->close();
