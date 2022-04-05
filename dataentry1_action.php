@@ -1,5 +1,5 @@
 <?php
-    include 'db_connect.php';
+	include 'db_connect.php';
 
 	// function to trim inputs
 	function test_input($data) {
@@ -7,8 +7,8 @@
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
 		return $data;
-    }
-	
+	}
+
 	// function to retain value for input fields after submit or refresh
 	function retain_value($vname) {
 		echo isset($_POST[$vname]) ? htmlspecialchars($_POST[$vname]) : ''; 	
@@ -25,38 +25,24 @@
 			echo "";
 		}
 	}
-	
-	// define variables and set to empty values
-	$first_name = $surname = "";
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-		$title = test_input($_POST["title"]);
-		$first_name = test_input($_POST["first_name"]);
-		$surname = test_input($_POST["surname"]);
+
+	// function to output heading for result box
+	function output_heading($result_status) {
+		// result_status can be Inserted record successfully
+		//						Deleted record successfully
+		//						Found record
+		//						Error: some text
+		// determine which message it is
+		if (strpos($result_status, "Inserted") === 0) {
+			echo "Inserted record:";
+		} else if (strpos($result_status, "Deleted") === 0) {
+			echo "Deleted record:";
+		} else if (strpos($result_status, "Error:") === 0) {
+			echo "Error occured";
+		} else {
+			echo "Status";
+		}
 	}
-
-
-	// login to the database
-	$conn = OpenCon("localhost", "robert", "coahtr", "TestIndex");
-
-	// check which button was clicked
-	if (isset($_POST['insert'])) {
-		// Insert record
-       	$result_status = InsertRec ($conn, "main", $title, $first_name, $surname);
-    } else if (isset($_POST['delete'])) {
-		//Delete record
-        $result_status = DeleteRec ($conn, "main", $first_name, $surname);
-    } else if (isset($_POST['clear'])) {
-		// clear all fields
-		$_POST['first_name'] = '';
-		$_POST['surname'] = '';
-		$_POST['title'] = '';
-    } else if (isset($_POST['search'])) {
-		// call the searchrec function
-		SearchRec($conn, "main", $title, $first_name, $surname);
-    }		
-
-	// Close connection to database
-	$conn->close();
 
 	// function to set the status colour for sql query
 	// green for no sql errors
@@ -71,7 +57,40 @@
 		} else {
 			// there is no error
 			$colour = "#20C040";
-        }
+		}
 		echo $colour;
-    }
+	}
+
+	// define variables and set to empty values
+	$first_name = $surname = "";
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		$title = test_input($_POST["title"]);
+		$first_name = test_input($_POST["first_name"]);
+		$surname = test_input($_POST["surname"]);
+	}
+
+
+	// login to the database
+	$conn = OpenCon("localhost", "robert", "coahtr", "TestIndex");
+
+	// check which button was clicked
+	if (isset($_POST['insert'])) {
+		// Insert record
+		$result_status = InsertRec ($conn, "main", $title, $first_name, $surname);
+    } else if (isset($_POST['delete'])) {
+		//Delete record
+		$result_status = DeleteRec ($conn, "main", $first_name, $surname);
+    } else if (isset($_POST['clear'])) {
+		// clear all fields
+		$_POST['first_name'] = '';
+		$_POST['surname'] = '';
+		$_POST['title'] = '';
+	} else if (isset($_POST['search'])) {
+		// call the searchrec function
+		SearchRec($conn, "main", $title, $first_name, $surname);
+	}
+
+	// Close connection to database
+	$conn->close();
+
 ?>

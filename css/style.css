@@ -24,18 +24,28 @@ label {
 	background-color: lightgrey;
 }
 
-#topbox {
-	margin: 10px;
-	width: 380px;
-	padding: 10px;
+#dataentrybox {
+	/* margin: 10px; */
+	width: 55%;
+	/* padding: 10px; */
+	height: 220px;
 	border: 5px solid #000;
 	float: left;
+	background-color: #a0d9ff;
 }
 
-#rightbox {
-	margin-left: 450px;
-	margin-top: 10px;
-	width: 150px;
-	padding: 10px;
+#resultbox {
+	margin-left: 60%;
+	height: 220px;
+	/* padding: 10px; */
 	border: 5px solid #000;
+	background-color: lightgrey;
+}
+
+#statusmessagebox {
+	margin: 10px;
+	float: down;
+	width: 100%;
+	border: 2px solid black;
+/*	background-color: white; */
 }

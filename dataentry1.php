@@ -1,22 +1,22 @@
 <?php 
-   include 'dataentry1_action.php';
+	include 'dataentry1_action.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <title>Data Entry</title>
-      <meta name="generator" content="Bluefish 2.2.12" />
-      <link rel="stylesheet" href="css/style.css">
-   </head>
+	<head>
+		<meta charset="utf-8" />
+		<title>Data Entry</title>
+		<meta name="generator" content="Bluefish 2.2.12" />
+		<link rel="stylesheet" href="css/style.css">
+	</head>
 
-    <body>
-		<!-- Data Entry box -->
-        <div id="main">
-			<h1 style="text-align: center;">Data Entry form</h1>
+	<body>
+		<div id="main">
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
-				<div id="topbox">
+				<!-- data entry box -->
+				<div id="dataentrybox">
+					<h1 style="text-align: center;">Data Entry form</h1>
 					<table>
 						<tr>
 							<td>
@@ -75,11 +75,11 @@
 					</table>
 				</div>
 			</form>
-		  
+
 			<!-- Results output -->
 			<?php
-				echo '<div id="rightbox">
-					<h1 style="text-align: center;">Result</h1>
+				echo '<div id="resultbox">
+					<h1 style="text-align: center;">', output_heading($result_status), '</h1>
 					<table>
 						<tr>
 							<td><label>Title:</label></td>
@@ -97,8 +97,8 @@
 				</div>';
 
 				// display the status message in the correct colour
-						
-				echo '<div><h1 style="text-align: center; color:',set_status_colour($result_status), ';">Status</h1>
+				echo '<div id="statusmessagebox">
+					<h1 style="text-align: center; color:',set_status_colour($result_status), ';">Status</h1>
 					<table class="center" style="background-color:white;">
 						<tr>
 							<td style="color:',set_status_colour($result_status),';"><b>', $result_status, '</b></td>
@@ -108,5 +108,4 @@
 			?>
 		</div>
 	</body>
-
 </html>
