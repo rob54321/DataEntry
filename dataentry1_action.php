@@ -77,10 +77,10 @@
 	if (isset($_POST['insert'])) {
 		// Insert record
 		$result_status = InsertRec ($conn, "main", $title, $first_name, $surname);
-    } else if (isset($_POST['delete'])) {
+	} else if (isset($_POST['delete'])) {
 		//Delete record
 		$result_status = DeleteRec ($conn, "main", $first_name, $surname);
-    } else if (isset($_POST['clear'])) {
+	} else if (isset($_POST['clear'])) {
 		// clear all fields
 		$_POST['first_name'] = '';
 		$_POST['surname'] = '';
