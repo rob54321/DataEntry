@@ -44,8 +44,8 @@
 						<td>     </td>
 					</tr>
 					<tr>
-						<td style="text-align:right;"> <input type="submit" value="Login" name="login"></td>
-						<td> <input type="submit" value="Cancel" name="cancel"></td>
+						<td style="text-align:right;"> <input type="submit" value="Go" name="go"></td>
+						<td> <input type="submit" value="Clear" name="clear"></td>
 					</tr>
 				</table>
 			</form>

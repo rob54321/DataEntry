@@ -47,3 +47,8 @@ label {
 /*	background-color: white; */
 	clear: left;
 }
+#main {
+	width: 770px;
+	margin-left: auto;
+	margin-right: auto;
+}
