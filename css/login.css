@@ -1,0 +1,21 @@
+/* css for the login form */
+body {
+	background-color: green;
+}
+h1, h2, h3 {
+	color:#0000ff;
+}
+table {
+	border: 2px solid black;
+	margin: auto;
+}
+#loginbox {
+	text-align: center;
+	margin-left: 23%;
+	width: 400px;
+	padding: 10px;
+	height: 220px;
+	border: 5px solid #000;
+	float: left;
+	background-color: #a0d9ff;
+}
