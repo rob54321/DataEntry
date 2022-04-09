@@ -1,8 +1,8 @@
 <?php
+	include 'login.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
 
 <head>
 	<title>Database Login</title>
@@ -15,7 +15,9 @@
 	<div id="main">
 		<div id="loginbox">
 			<h1>Database login</h1>
-			<form method="post" action="login.php">
+			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
+					method="post"
+					target="_self">
 				<table>
 					<tr>
 						<td>Username:</td>
@@ -45,7 +47,7 @@
 					</tr>
 					<tr>
 						<td style="text-align:right;"> <input type="submit" value="Go" name="go"></td>
-						<td> <input type="submit" value="Clear" name="clear"></td>
+						<td> <input type="reset" name="reset" value="Clear"></td>
 					</tr>
 				</table>
 			</form>

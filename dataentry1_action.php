@@ -71,7 +71,7 @@
 
 
 	// login to the database
-	$conn = OpenCon("localhost", "robert", "coahtr", "TestIndex");
+	// $conn = OpenCon("localhost", "robert", "coahtr", "TestIndex");
 
 	// check which button was clicked
 	if (isset($_POST['insert'])) {
@@ -91,6 +91,6 @@
 	}
 
 	// Close connection to database
-	$conn->close();
+	//$conn->close();
 
 ?>

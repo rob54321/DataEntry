@@ -1,11 +1,8 @@
 <?php
 	// open database connection
+	// function invokind must check for errors
 	function OpenCon($dbhost, $dbuser,$dbpass, $db) {
 		$conn = new mysqli($dbhost, $dbuser, $dbpass,$db, 3306);
-		// check for an error
-		if ($conn->connect_error) {
-			printf("Error description: %s<br>", $conn->connect_error);
-		}
 		return $conn;
 	}
 
