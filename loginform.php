@@ -1,5 +1,9 @@
 <?php
-	include 'login.php';
+	ini_set("display_errors",1);
+	error_reporting(E_ALL);
+
+	if (!session_id()) session_start();
+	include 'dataentry1_action.php';
 ?>
 <!DOCTYPE html>
 <html xml:lang="en" lang="en">
@@ -17,6 +21,8 @@
 			<h1>Database login</h1>
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
 					method="post"
+					name="loginform"
+					value="login"
 					target="_self">
 				<table>
 					<tr>
@@ -50,8 +56,10 @@
 						<td> <input type="reset" name="reset" value="Clear"></td>
 					</tr>
 				</table>
+				<input type="hidden" name="loginform" value="lform">
 			</form>
 		</div>
+		<textarea style="margin-top: 20px" rows=4 cols=40><?php echo $login_status ?></textarea>
 	</div>
 </body>
 

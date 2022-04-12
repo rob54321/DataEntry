@@ -1,4 +1,7 @@
-<?php 
+<?php
+	ini_set("display_errors",1);
+	error_reporting(E_ALL);
+
 	include 'dataentry1_action.php';
 ?>
 
@@ -31,6 +34,7 @@
 									<option value="Rev" <?php retain_select("Rev"); ?> >Rev</option>
 									<option value="Miss" <?php retain_select("Miss"); ?> >Miss</option>
 									<option value="Master" <?php retain_select("Master"); ?> >Master</option>
+									<option value="" <?php retain_select(""); ?> >None</option>
 								</select>
 							</td>
 						</tr>
@@ -71,9 +75,13 @@
 							<td>
 								<input type="submit" value="Clear" name="clear">
 							</td>
+							<td>
+								<input type="submit" value="Logout" name="logout">
+							</td>
 						</tr>
 					</table>
 				</div>
+				<input type="hidden" name="dataentry" value="dataentry">
 			</form>
 
 			<!-- Results output -->
