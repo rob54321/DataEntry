@@ -61,6 +61,9 @@
 									value="<?php retain_value("surname"); ?>" >
 							</td>
 						</tr>
+					</table>
+					<table style="margin-top: 20px; border: 1px solid black; padding:5px;">
+						<!-- new table for buttons
 						<tr>
 							<!-- Buttons on the form -->
 							<td style="text-align: left;" >
