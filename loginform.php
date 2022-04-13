@@ -59,7 +59,11 @@
 				<input type="hidden" name="loginform" value="lform">
 			</form>
 		</div>
-		<textarea style="margin-top: 20px" rows=4 cols=40><?php echo $login_status ?></textarea>
+		<textarea style="margin-top: 20px; color:
+					<?php set_status_colour($login_status); ?> ;"
+					rows=4
+					cols=40><?php echo $login_status ?>
+		</textarea>
 	</div>
 </body>
 

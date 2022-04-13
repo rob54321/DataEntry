@@ -38,11 +38,11 @@
 		//						Found record
 		//						Error: some text
 		// determine which message it is
-		if (strpos($result_status, "Inserted") === 0) {
+		if (stripos($result_status, "Inserted") === 0) {
 			echo "Inserted record:";
-		} else if (strpos($result_status, "Deleted") === 0) {
+		} else if (stripos($result_status, "Deleted") === 0) {
 			echo "Deleted record:";
-		} else if (strpos($result_status, "Error:") === 0) {
+		} else if (stripos($result_status, "Error:") === 0) {
 			echo "Error occured";
 		} else {
 			echo "Status";
@@ -55,7 +55,7 @@
 	function set_status_colour($result_status) {
 		// determine colour of status message
 		// depending on wether it is an error or not
-		$pos = strpos($result_status, "Error");
+		$pos = stripos($result_status, "Error");
 		if ($pos === 0) {
 			// there was an error
 			$colour = "#ff0000";
@@ -84,7 +84,7 @@
 		$conn = OpenCon( "localhost", $username, $password, "TestIndex");
 		// check for error
 		if (isset($conn->connect_error)) {
-			$login_status = "error: " . $conn->connect_error;
+			$login_status = "Error: " . $conn->connect_error;
 			return $login_status;
 		} else {
 			$login_status = "no error";
@@ -97,9 +97,6 @@
 			header("Location: dataentry1.php");
 			exit();
 		}
-		// error loging in
-		// the value must be displayed in a textarea on the login form
-		//
 	}
 
 	// processing for data entry form
